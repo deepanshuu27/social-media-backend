@@ -11,7 +11,7 @@ const logger = require("../utils/logger");
  */
 const register = async (req, res) => {
   try {
-    const { username, email, password, full_name } = req.validatedData;
+    const { username, email, password, full_name } = req.body;
 
     // Create user
     const user = await createUser({ username, email, password, full_name });
@@ -45,7 +45,7 @@ const register = async (req, res) => {
  */
 const login = async (req, res) => {
   try {
-    const { username, password } = req.validatedData;
+    const { username, password } = req.body;
 
     // Find user
     const user = await getUserByUsername(username);
