@@ -44,7 +44,7 @@ app.use("/api/comments", commentRoutes);
 app.use("/api/likes", likeRoutes);
 
 // Base route for url
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
 	res.status(200).json({ status: "OK Toddle Backend Project - CEC - Deepanshu", timestamp: new Date().toISOString() });
 });
 
