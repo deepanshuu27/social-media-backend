@@ -18,6 +18,9 @@ const initializePool = () => {
 			max: 20,
 			idleTimeoutMillis: 30000,
 			connectionTimeoutMillis: 2000,
+			ssl: {
+				rejectUnauthorized: false, // Important for Render-hosted PostgreSQL
+			},
 		});
 
 		pool.on("error", (err) => {
@@ -26,6 +29,7 @@ const initializePool = () => {
 	}
 	return pool;
 };
+
 
 /**
  * Connect to the database and test connection
