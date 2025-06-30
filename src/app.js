@@ -43,10 +43,6 @@ app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/likes", likeRoutes);
 
-// Base route for url
-app.get("/api", (req, res) => {
-	res.status(200).json({ status: "OK Toddle Backend Project - CEC - Deepanshu", timestamp: new Date().toISOString() });
-});
 
 // Health check endpoint
 app.get("/health", (req, res) => {
